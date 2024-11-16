@@ -1,0 +1,103 @@
+@import url("https://fonts.cdnfonts.com/css/druk-wide-bold");
+
+.footer {
+  background: #646363;
+  padding: 60px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+
+  &_logo {
+    display: flex;
+    text-decoration: none;
+    gap: 10px;
+
+    img {
+      width: 30px;
+    }
+
+    h1 {
+      color: white;
+      font-weight: bold;
+      font-family: "Druk Wide Bold";
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &_sect {
+    height: 97px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #dadada;
+
+    @media (max-width: 690px) {
+      max-width: 250px;
+      width: 100%;
+      margin: 20px auto;
+      height: auto;
+      gap: 15px;
+    }
+  }
+
+  &_link {
+    text-decoration: none;
+    color: #dadada;
+  }
+
+  &_line {
+    display: flex;
+    height: 97px !important;
+    width: 1px;
+    border: 1px solid #dadada;
+
+    @media (max-width: 1300px) {
+      display: none;
+    }
+  }
+
+  &_secondary {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.2px;
+  }
+
+  &_links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &_wrapper {
+      display: flex;
+      flex-direction: row;
+      gap: 50px;
+    }
+
+    @media (max-width: 1300px) {
+      display: none;
+    }
+  }
+
+  &_social {
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+
+    @media (max-width: 690px) {
+      justify-content: flex-start;
+      gap: 50px;
+    }
+  }
+
+  @media (max-width: 1440px) {
+    padding: 40px;
+  }
+
+  @media (max-width: 690px) {
+    padding: 20px;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
