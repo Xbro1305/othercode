@@ -21,12 +21,16 @@ import i3 from "../../images/icon03.svg";
 import i4 from "../../images/icon04.svg";
 import i5 from "../../images/icon05.svg";
 import i6 from "../../images/icon06.svg";
+import prtnr1 from "../../images/image 6.svg";
+import prtnr2 from "../../images/image.svg";
+import prtnt3 from "../../images/image 8.svg";
 import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 
 export const Home = () => {
   const [diirect, setDirect] = useState(7);
+  const [Faq, setFaq] = useState(7);
   const navigate = useNavigate();
 
   return (
@@ -318,6 +322,52 @@ export const Home = () => {
           </Swiper>
         </div>
       </div>
+
+      <div className={styles.home_partners}>
+        <div className={styles.home_partners_top}>
+          <h2 className={styles.home_h2}> Наши клиенты</h2>
+        </div>
+        <div className={styles.home_partners_wrapper}>
+          {partners.map((p) => (
+            <div className={styles.home_partners_item}>
+              <img src={p} alt="" />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className={styles.home_faq}>
+        <div className={styles.home_faq_top}>FAQ</div>
+        <div className={styles.home_faq_wrapper}>
+          {faq.map((f, index) => (
+            <div className={styles.home_faq_item}>
+              <label className={styles.home_faq_item_top}>
+                <h3
+                  opnd={Faq == index ? "true" : "false"}
+                  className={styles.home_h3}
+                >
+                  {f.q}
+                </h3>
+                <button
+                  opnd={Faq == index ? "true" : "false"}
+                  onClick={() => {
+                    setFaq(Faq == index ? 6 : index);
+                  }}
+                  className={styles.home_h1}
+                >
+                  {Faq == index ? "-" : "+"}
+                </button>
+              </label>
+              <p
+                opnd={Faq == index ? "true" : "false"}
+                className={styles.home_body}
+              >
+                {f.a}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
@@ -333,6 +383,17 @@ const Advantage = ({ i }) => {
     </div>
   );
 };
+
+const partners = [
+  prtnr1,
+  prtnr2,
+  prtnt3,
+  prtnr1,
+  prtnr1,
+  prtnr2,
+  prtnt3,
+  prtnr1,
+];
 
 const directions = [
   {
@@ -440,5 +501,28 @@ const advantages = [
     title: "Сдавать проекты вовремя — наша суперсила",
     img: i6,
     desc: "Грамотное распределение задач внутри команды, чёткое понимание процессов и ответственный подход к работе гарантирует соблюдение временных сроков.",
+  },
+];
+
+const faq = [
+  {
+    q: "Берётесь ли вы за доработку чужого проекта?",
+    a: "Большая часть наших проектов покрыта NDA и мы не можем рассказать о самых интересных приложениях, над которыми работали. Если вы расскажете нам о своём проекте, мы расскажем о нашем опыте в этой сфере и конечно сможем предложить решение",
+  },
+  {
+    q: "Можно ли заказать определённый этап разработки?",
+    a: "Большая часть наших проектов покрыта NDA и мы не можем рассказать о самых интересных приложениях, над которыми работали. Если вы расскажете нам о своём проекте, мы расскажем о нашем опыте в этой сфере и конечно сможем предложить решение",
+  },
+  {
+    q: "Сможете сделать проект, если у вас в портфолио нет аналогов?",
+    a: "Большая часть наших проектов покрыта NDA и мы не можем рассказать о самых интересных приложениях, над которыми работали. Если вы расскажете нам о своём проекте, мы расскажем о нашем опыте в этой сфере и конечно сможем предложить решение",
+  },
+  {
+    q: "За какие проекты вы не берётесь и почему?",
+    a: "Большая часть наших проектов покрыта NDA и мы не можем рассказать о самых интересных приложениях, над которыми работали. Если вы расскажете нам о своём проекте, мы расскажем о нашем опыте в этой сфере и конечно сможем предложить решение",
+  },
+  {
+    q: "Занимаетесь ли вы поддержкой?",
+    a: "Большая часть наших проектов покрыта NDA и мы не можем рассказать о самых интересных приложениях, над которыми работали. Если вы расскажете нам о своём проекте, мы расскажем о нашем опыте в этой сфере и конечно сможем предложить решение",
   },
 ];
