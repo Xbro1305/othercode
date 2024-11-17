@@ -86,7 +86,7 @@ export const Home = () => {
         <img src={animation} className={styles.home_animation_right} alt="" />
       </div>
 
-      <div className={styles.home_porjects}>
+      <div className={styles.home_projects}>
         <div className={styles.home_projects_top}>
           <h2 className={styles.home_h2}>Выполненные проекты</h2>
           <button
