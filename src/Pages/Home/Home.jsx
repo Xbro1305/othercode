@@ -8,9 +8,17 @@ import fifth from "../../images/Vector 4.svg";
 import sixth from "../../images/Vector 5.svg";
 import arrow from "../../images/directarrow.svg";
 import animation from "../../images/Animation.svg";
+import p1 from "../../images/p1.jpg";
+import p2 from "../../images/p2.jpg";
+import p3 from "../../images/p3.jpg";
+import p4 from "../../images/p4.jpg";
+import p5 from "../../images/p5.jpg";
+import { useNavigate } from "react-router-dom";
 
 export const Home = () => {
   const [diirect, setDirect] = useState(7);
+  const navigate = useNavigate();
+
   return (
     <div className={styles.home}>
       <div className={styles.home_intro}>
@@ -35,7 +43,8 @@ export const Home = () => {
         <div className={styles.home_directions_wrapper}>
           {directions.map((i, index) => (
             <div
-              aria-opened={diirect == index ? true : false}
+              key={index}
+              opened={diirect == index ? "true" : "false"}
               className={styles.home_directions_item}
             >
               <span className={styles.home_directions_item_topLine}></span>
@@ -54,7 +63,7 @@ export const Home = () => {
 
                 <img
                   src={arrow}
-                  aria-opened={diirect == index ? true : false}
+                  opened={diirect == index ? "true" : "false"}
                   onClick={() => setDirect(diirect == index ? 7 : index)}
                   className={styles.home_directions_item_openButton}
                 />
@@ -75,6 +84,36 @@ export const Home = () => {
           </p>
         </div>
         <img src={animation} className={styles.home_animation_right} alt="" />
+      </div>
+
+      <div className={styles.home_porjects}>
+        <div className={styles.home_projects_top}>
+          <h2 className={styles.home_h2}>Выполненные проекты</h2>
+          <button
+            className={styles.home_button}
+            onClick={() => navigate("/projects")}
+          >
+            Все проекты
+          </button>
+        </div>
+        <div className={styles.home_projects_wrapper}>
+          {projects.map((i, index) => (
+            <div
+              style={{ backgroundImage: `url(${i.bg})` }}
+              key={index}
+              className={styles.home_projects_item}
+            >
+              <h3 className={styles.home_h3}>{i.title}</h3>
+              <section className={styles.home_projects_item_tags}>
+                {i.tags.map((t, index) => (
+                  <p className={styles.home_projects_item_tag} key={index}>
+                    #{t}
+                  </p>
+                ))}
+              </section>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -121,5 +160,37 @@ const directions = [
     description:
       "В процессе эксплуатации продукта мы берём на себя качественное сопровождение и технический мониторинг проекта для его бесперебойной работы.",
     img: sixth,
+  },
+];
+
+const projects = [
+  {
+    title: "Телеграмм-бот для службы такси, включая UX-дизайн Web application",
+    tags: ["bot", "UX design"],
+    bg: p1,
+  },
+  {
+    title:
+      "Инвестиционная платформа для клиентов, которые не могут напрямую взаимодействовать с иностранными биржами",
+    tags: ["bloakchaine", "web"],
+    bg: p2,
+  },
+  {
+    title:
+      "IDO крипто-площадка с возможностью подключения к сетям ETH, Solana и сторонних игровых сервисов",
+    tags: ["blockchaine"],
+    bg: p3,
+  },
+  {
+    title:
+      "Заголовок проекта. Лучше, если он будет состоять из трех, четырех, но не более   пяти строк",
+    tags: ["bot", "UX design"],
+    bg: p4,
+  },
+  {
+    title:
+      "Заголовок проекта. Лучше, если он будет состоять из трех, четырех, но не более   пяти строк",
+    tags: ["bloakchaine", "web"],
+    bg: p5,
   },
 ];
