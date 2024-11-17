@@ -27,6 +27,7 @@ import prtnt3 from "../../images/image 8.svg";
 import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
+import vd from "../../images/видео для сайта (главная страница).mp4";
 
 export const Home = () => {
   const [diirect, setDirect] = useState(7);
@@ -36,10 +37,15 @@ export const Home = () => {
   return (
     <div className={styles.home}>
       <div className={styles.home_intro}>
-        {/* <img
+        <video
+          src={vd}
+          autoPlay
+          muted
+          loop
           className={styles.home_intro_bg}
-          src={require("../../images/home_intro.gif")}
-        /> */}
+        >
+          <source src={vd} type="video/mp4" />
+        </video>
         <h1 className={styles.home_h1}>
           Уникальные цифровые продукты для бизнеса и государства
         </h1>
