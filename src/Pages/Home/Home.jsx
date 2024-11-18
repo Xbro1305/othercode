@@ -37,13 +37,7 @@ export const Home = () => {
   return (
     <div className={styles.home}>
       <div className={styles.home_intro}>
-        <video
-          src={vd}
-          autoPlay
-          muted
-          loop
-          className={styles.home_intro_bg}
-        >
+        <video src={vd} autoPlay muted loop className={styles.home_intro_bg}>
           <source src={vd} type="video/mp4" />
         </video>
         <h1 className={styles.home_h1}>
@@ -64,6 +58,7 @@ export const Home = () => {
           {directions.map((i, index) => (
             <div
               key={index}
+              onClick={() => setDirect(diirect == index ? 7 : index)}
               opened={diirect == index ? "true" : "false"}
               className={styles.home_directions_item}
             >
