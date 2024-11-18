@@ -14,3 +14,22 @@
   flex-direction: column;
   justify-content: space-between;
 }
+
+.swiper-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.swprpgntn {
+  display: block;
+  width: 30px;
+  height: 8px;
+  border-radius: 10px;
+  background: #8f8f8f;
+}
+
+.swprpgntn_active {
+  background: #ff3c00;
+}

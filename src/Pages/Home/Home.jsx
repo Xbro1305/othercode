@@ -312,7 +312,11 @@ export const Home = () => {
             spaceBetween={50}
             slidesPerView={1}
             modules={[Pagination]}
-            pagination={{ clickable: true }}
+            pagination={{
+              clickable: true,
+              bulletClass: "swprpgntn",
+              bulletActiveClass: "swprpgntn_active",
+            }}
             onSwiper={(swiper) => console.log(swiper)}
           >
             {advantages.map((i) => (
