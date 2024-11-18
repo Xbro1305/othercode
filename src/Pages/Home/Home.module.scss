@@ -487,6 +487,11 @@
           height: 26px;
           left: 12px;
           border-radius: 50%;
+
+          @media (max-width: 690px) {
+            width: 24px !important;
+            height: 24px !important;
+          }
         }
 
         &_input:hover::after,
@@ -504,8 +509,8 @@
           align-items: center;
           justify-content: center;
           background: #ff3c00;
-          width: 30px;
-          height: 30px;
+          width: 30px !important;
+          height: 30px !important;
           color: #fff;
           font-size: 22px;
         }
