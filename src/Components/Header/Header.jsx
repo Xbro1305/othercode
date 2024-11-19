@@ -11,6 +11,7 @@ export const Header = () => {
       <header className={styles.header}>
         <div
           className={menu ? styles.header_menu_bg : styles.header_menuDisabled}
+          onClick={() => setMenu(!menu)}
         ></div>
         <Link className={styles.header_logo} to="/">
           <img src={logo} alt="" /> <h1>OTHER CODE</h1>
@@ -26,25 +27,53 @@ export const Header = () => {
           <section
             className={menu ? styles.header_menu_active : styles.header_menu}
           >
-            <NavLink to="/" className={styles.header_navLink}>
+            <NavLink
+              onClick={() => setMenu(false)}
+              to="/"
+              className={styles.header_navLink}
+            >
               Главная
             </NavLink>
-            <NavLink className={styles.header_navLink} to="/projects">
+            <NavLink
+              onClick={() => setMenu(false)}
+              className={styles.header_navLink}
+              to="/projects"
+            >
               Проекты
             </NavLink>
-            <NavLink className={styles.header_navLink} to="/services">
+            <NavLink
+              onClick={() => setMenu(false)}
+              className={styles.header_navLink}
+              to="/services"
+            >
               Услуги
             </NavLink>
-            <NavLink className={styles.header_navLink} to="/about">
+            <NavLink
+              onClick={() => setMenu(false)}
+              className={styles.header_navLink}
+              to="/about"
+            >
               О нас
             </NavLink>
-            <NavLink className={styles.header_navLink} to="/vacancies">
+            <NavLink
+              onClick={() => setMenu(false)}
+              className={styles.header_navLink}
+              to="/vacancies"
+            >
               Вакансии
             </NavLink>
-            <NavLink className={styles.header_navLink} to="/blog">
+            <NavLink
+              onClick={() => setMenu(false)}
+              className={styles.header_navLink}
+              to="/blog"
+            >
               Блог
             </NavLink>
-            <NavLink className={styles.header_navLink} to="/contact">
+            <NavLink
+              onClick={() => setMenu(false)}
+              className={styles.header_navLink}
+              to="/contact"
+            >
               Контакты
             </NavLink>
           </section>

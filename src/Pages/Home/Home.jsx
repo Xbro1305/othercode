@@ -128,6 +128,12 @@ export const Home = () => {
               </section>
             </div>
           ))}
+          <button
+            className={styles.home_button}
+            onClick={() => navigate("/projects")}
+          >
+            Все проекты
+          </button>
           <div className={styles.home_projects_item}>
             <h3 className={styles.home_h3}>Обсудим ваш проект?</h3>
             <p className={styles.home_body}>
