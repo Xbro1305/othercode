@@ -9,6 +9,9 @@ export const Header = () => {
   return (
     <>
       <header className={styles.header}>
+        <div
+          className={menu ? styles.header_menu_bg : styles.header_menuDisabled}
+        ></div>
         <Link className={styles.header_logo} to="/">
           <img src={logo} alt="" /> <h1>OTHER CODE</h1>
         </Link>

@@ -9,7 +9,7 @@
   backdrop-filter: blur(50px);
   position: fixed;
   top: 0;
-  z-index: 99999;
+  z-index: 999;
   background: linear-gradient(
     180deg,
     rgba(0, 0, 0, 0.3) 0%,
@@ -42,6 +42,7 @@
 
   &_menuButton {
     display: none;
+    z-index: 999999;
 
     @media (max-width: 1300px) {
       display: flex;
@@ -161,7 +162,23 @@
     background: #fff;
   }
 
+  &_menu_bg {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #00000080;
+    z-index: 999;
+  }
+
+  &_menuDisabled {
+    display: none;
+  }
+
   &_menu_active {
+    z-index: 9999999 !important;
     right: 40px;
     width: 386px;
     padding: 40px;
