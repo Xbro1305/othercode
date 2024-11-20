@@ -154,9 +154,9 @@
     }
 
     @media (max-width: 500px) {
-      gap: 50px;
+      gap: 30px;
       &_left {
-        gap: 50px;
+        gap: 30px;
         &_top {
           grid-template-columns: 60px, 1fr;
           img {
