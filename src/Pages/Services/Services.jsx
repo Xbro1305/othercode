@@ -40,78 +40,86 @@ export const Services = () => {
                 <p className={styles.services_body}>{s.desc}</p>
               </div>
               <div className={styles.services_item_left_bottom}>
-                {projects
-                  .filter((p) => p.tags.includes(s.tag))
-                  .map((i, index) => {
-                    return (
-                      <div
-                        style={{ backgroundImage: `url(${i.bg})` }}
-                        key={index}
-                        className={styles.projects_item}
-                      >
-                        <h3 className={styles.services_h3}>{i.title}</h3>
-                        <section className={styles.projects_item_tags}>
-                          {i.tags.map((t, index) => (
-                            <p className={styles.projects_item_tag} key={index}>
-                              {t}
-                            </p>
-                          ))}
-                        </section>
-                      </div>
-                    );
-                  })}
+                {JSON.stringify(
+                  projects.filter((p) => p.tags.includes(s.tag))
+                ) != "[]" &&
+                  projects
+                    .filter((p) => p.tags.includes(s.tag))
+                    .map((i, index) => {
+                      return (
+                        <div
+                          style={{ backgroundImage: `url(${i.bg})` }}
+                          key={index}
+                          className={styles.projects_item}
+                        >
+                          <h3 className={styles.services_h3}>{i.title}</h3>
+                          <section className={styles.projects_item_tags}>
+                            {i.tags.map((t, index) => (
+                              <p
+                                className={styles.projects_item_tag}
+                                key={index}
+                              >
+                                {t}
+                              </p>
+                            ))}
+                          </section>
+                        </div>
+                      );
+                    })}
               </div>
             </div>
             <div className={styles.services_item_right}>
               <div className={styles.services_item_right_wrapper}>
-                {s.stages.map((i, index) => {
-                  return (
-                    <div
-                      onClick={() => setopened(opened == i.id ? 0 : i.id)}
-                      className={styles.services_item_stage}
-                    >
-                      <p className={styles.services_item_stage_id}>
-                        0{index + 1}
-                      </p>
-                      <h4 className={styles.services_h4}>{i.title}</h4>
-                      <button
-                        style={{ display: i.id ? "flex" : "none" }}
+                {s.stages &&
+                  s.stages.map((i, index) => {
+                    return (
+                      <div
                         onClick={() => setopened(opened == i.id ? 0 : i.id)}
+                        className={styles.services_item_stage}
                       >
-                        {opened == i.id ? "-" : "+"}
-                      </button>
-                      <p
-                        opened={opened == i.id ? "true" : "false"}
-                        className={styles.services_item_right_text}
-                      >
-                        {i?.desc}
-                      </p>
-                    </div>
-                  );
-                })}
+                        <p className={styles.services_item_stage_id}>
+                          0{index + 1}
+                        </p>
+                        <h4 className={styles.services_h4}>{i.title}</h4>
+                        <button
+                          style={{ display: i.id ? "flex" : "none" }}
+                          onClick={() => setopened(opened == i.id ? 0 : i.id)}
+                        >
+                          {opened == i.id ? "-" : "+"}
+                        </button>
+                        <p
+                          opened={opened == i.id ? "true" : "false"}
+                          className={styles.services_item_right_text}
+                        >
+                          {i?.desc}
+                        </p>
+                      </div>
+                    );
+                  })}
               </div>
               <div className={styles.services_item_right_wrapper}>
-                {s?.additional?.map((i, index) => {
-                  return (
-                    <div
-                      onClick={() => setopened(opened == i.id ? 0 : i.id)}
-                      className={styles.services_item_stage}
-                    >
-                      <h4 className={styles.services_h4}>{i.title}</h4>
-                      <button
+                {s.additional &&
+                  s?.additional?.map((i, index) => {
+                    return (
+                      <div
                         onClick={() => setopened(opened == i.id ? 0 : i.id)}
+                        className={styles.services_item_stage}
                       >
-                        {opened == i.id ? "-" : "+"}
-                      </button>
-                      <p
-                        opened={opened == i.id ? "true" : "false"}
-                        className={styles.services_item_right_text}
-                      >
-                        {i?.desc}
-                      </p>
-                    </div>
-                  );
-                })}
+                        <h4 className={styles.services_h4}>{i.title}</h4>
+                        <button
+                          onClick={() => setopened(opened == i.id ? 0 : i.id)}
+                        >
+                          {opened == i.id ? "-" : "+"}
+                        </button>
+                        <p
+                          opened={opened == i.id ? "true" : "false"}
+                          className={styles.services_item_right_text}
+                        >
+                          {i?.desc}
+                        </p>
+                      </div>
+                    );
+                  })}
               </div>
             </div>
           </div>
