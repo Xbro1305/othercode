@@ -28,6 +28,10 @@
       object-fit: cover;
     }
 
+    &_bg::-webkit-media-controls {
+      display: none !important;
+    }
+
     .home_l1 {
       color: #f0f0f0;
       max-width: 50%;
