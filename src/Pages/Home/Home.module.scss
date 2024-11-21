@@ -428,12 +428,16 @@
         width: 100%;
         grid-template-rows: repeat(1, 1fr);
         grid-template-columns: repeat(5, calc(100% - 15px));
+        position: relative;
 
         overflow: auto;
 
-        .home_button {
+        > .home_button {
           display: flex;
           margin: 20px;
+          position: sticky;
+          left: 20px;
+          bottom: 0;
         }
       }
 
