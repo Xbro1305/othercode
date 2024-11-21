@@ -73,6 +73,22 @@ export const Vacancies = () => {
           </div>
         ))}
       </div>
+
+      <div className={styles.vacancies_top5}>
+        {reasons_to_join.map((i) => {
+          return (
+            <div className={styles.vacancies_top5_item}>
+              <div className={styles.vacancies_top5_item_top}>
+                <span className={styles.vacancies_top5_item_top_id}>
+                  {i.id}
+                </span>
+                <h4 className={styles.vacancies_h4}>{i.title}</h4>
+              </div>
+              <p className={styles.vacancies_body}>{i.desc}</p>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
