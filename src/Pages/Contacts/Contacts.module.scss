@@ -106,7 +106,7 @@
         position: relative;
 
         input[type="phone"] {
-          padding-left: 42px;
+          padding-left: 40px;
           width: 100%;
         }
       }
@@ -155,7 +155,7 @@
       font-size: 16px;
       font-weight: 400;
       line-height: 20.8px;
-      top: 15px;
+      top: 16.4px;
       left: 20px;
       color: #8f8f8f;
     }
@@ -170,6 +170,11 @@
       font-size: 16px;
       font-weight: 400;
       line-height: 20.8px;
+      cursor: pointer;
+      
+      input {
+        display: none;
+      }
     }
 
     &_confirm {

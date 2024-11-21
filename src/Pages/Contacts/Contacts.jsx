@@ -48,10 +48,11 @@ export const Contacts = () => {
         </section>
         <input type="email" name="email" placeholder="E-mail" />
         <textarea name="text" id="" placeholder="Опишите задачу"></textarea>
-        <button className={styles.contacts_form_button}>
+        <label className={styles.contacts_form_button}>
           <img src={s} alt="" />
           Прикрепить файл
-        </button>
+          <input type="file" className={styles.contacts_form_button} />
+        </label>
         <section>
           <label className={styles.contacts_form_confirm}>
             <input type="checkbox" />
