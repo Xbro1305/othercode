@@ -12,7 +12,7 @@ import i6 from "../../images/icon06.svg";
 import styles from "./About.module.scss";
 import animation from "../../images/Animation.svg";
 import { Pagination } from "swiper/modules";
-import vd from "../../images/видео для сайта (главная страница).mp4";
+import vd from "../../images/видео для сайта (страница _о нас_).mp4";
 
 export const About = () => {
   return (
@@ -21,12 +21,12 @@ export const About = () => {
         <video src={vd} autoPlay muted loop className={styles.about_intro_bg}>
           <source src={vd} type="video/mp4" />
         </video>
-        <h1 className={styles.about_h1}>
-          Уникальные цифровые продукты для бизнеса и государства
-        </h1>
+        <h1 className={styles.about_h1}>Кто мы и почему мы другие?</h1>
+
         <p className={styles.about_l1}>
-          Помогаем создавать эффективные digital-продукты, основанные на
-          глубокой аналитике и здравом смысле
+          Other code — это другой подход к разработке цифровых решений для любых
+          задач. Мы создаём уникальные IT-продукты, не используя шаблоны,
+          а оцениваем каждый проект с точки зрения его целесообразности.
         </p>
       </div>
       <div className={styles.about_advantages}>
@@ -85,6 +85,7 @@ export const About = () => {
     </div>
   );
 };
+
 const Advantage = ({ i }) => {
   return (
     <div className={styles.about_advantages_item}>

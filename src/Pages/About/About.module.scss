@@ -24,12 +24,12 @@
       object-fit: cover;
     }
 
-    .home_l1 {
+    .about_l1 {
       color: #f0f0f0;
       max-width: 50%;
     }
 
-    .home_h1 {
+    .about_h1 {
       max-width: 50%;
     }
 
@@ -42,11 +42,11 @@
       padding: 20px;
       justify-content: flex-end;
 
-      .home_l1 {
+      .about_l1 {
         max-width: 100%;
       }
 
-      .home_h1 {
+      .about_h1 {
         max-width: 100%;
       }
     }
@@ -111,11 +111,11 @@
       gap: 40px;
       justify-content: flex-end;
 
-      .home_l1 {
+      .about_l1 {
         max-width: 100%;
       }
 
-      .home_h1 {
+      .about_h1 {
         max-width: 100%;
       }
 
@@ -148,7 +148,7 @@
     &_carousel {
       display: none;
 
-      .home_advantages_item {
+      .about_advantages_item {
         margin-bottom: 50px;
         padding: 20px;
         display: flex;
