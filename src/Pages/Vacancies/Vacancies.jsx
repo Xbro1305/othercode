@@ -74,6 +74,8 @@ export const Vacancies = () => {
         ))}
       </div>
 
+      <h2 className={styles.vacancies_h2}>5 причин присоединиться к нам</h2>
+
       <div className={styles.vacancies_top5}>
         {reasons_to_join.map((i) => {
           return (
