@@ -32,6 +32,25 @@
       display: none !important;
     }
 
+    &_bg::-webkit-media-controls-panel {
+      display: none !important;
+      -webkit-appearance: none;
+      opacity: 0;
+      visibility: hidden;
+    }
+    &_bg::-webkit-media-controls-play-button {
+      display: none !important;
+      -webkit-appearance: none;
+      opacity: 0;
+      visibility: hidden;
+    }
+    &_bg::-webkit-media-controls-start-playback-button {
+      display: none !important;
+      -webkit-appearance: none;
+      opacity: 0;
+      visibility: hidden;
+    }
+
     .home_l1 {
       color: #f0f0f0;
       max-width: 50%;
