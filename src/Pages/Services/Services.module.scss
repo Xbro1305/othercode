@@ -84,10 +84,12 @@
 
       &_bottom {
         display: grid;
-        grid-template-rows: repeat(1, 1fr);
-        grid-template-columns: repeat(3, 90%);
+        // grid-template-rows: repeat(1, 1fr);
+        grid-template-rows: repeat(3, 95%);
         width: 100%;
+        aspect-ratio: 1/1;
         overflow: auto;
+        transform: rotate(-90deg);
       }
     }
 
@@ -143,7 +145,8 @@
 
       &_left_bottom {
         display: grid !important;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        transform: rotate(-90deg);
       }
     }
 
@@ -343,6 +346,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  transform: rotate(90deg);
 
   &_tag {
     font-size: 16px;

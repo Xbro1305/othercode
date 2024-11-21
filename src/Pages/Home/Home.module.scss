@@ -416,7 +416,7 @@
       display: grid;
       grid-template-columns: repeat(3, calc(100% / 3));
 
-      .home_button {
+      > .home_button {
         display: none;
       }
 
