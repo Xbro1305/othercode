@@ -81,12 +81,13 @@ export const Services = () => {
                           0{index + 1}
                         </p>
                         <h4 className={styles.services_h4}>{i.title}</h4>
-                        <button
-                          style={{ display: i.id ? "flex" : "none" }}
-                          onClick={() => setopened(opened == i.id ? 0 : i.id)}
-                        >
-                          {opened == i.id ? "-" : "+"}
-                        </button>
+                        {i.id && (
+                          <button
+                            onClick={() => setopened(opened == i.id ? 0 : i.id)}
+                          >
+                            {opened == i.id ? "-" : "+"}
+                          </button>
+                        )}
                         <p
                           opened={opened == i.id ? "true" : "false"}
                           className={styles.services_item_right_text}

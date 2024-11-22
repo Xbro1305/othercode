@@ -15,7 +15,7 @@ export const Footer = () => {
           <h1>OTHER CODE</h1>
         </div>
         <p className={styles.footer_secondary}>
-          © 2024 Все права защищены. <br /> Политика конфиденциальности
+          © 2024 Все права защищены. <br /> Политика конфиденциальности
         </p>
       </div>
       <span className={styles.footer_line}></span>
@@ -25,7 +25,7 @@ export const Footer = () => {
           <b>
             ООО «ДругойКод» <br />
           </b>
-          Ставрополь, ул. Мира, 329 <br />
+          Ставрополь, ул. Мира, 319 <br />
           <Link className={styles.footer_link} to="mailto:info@othercode.ru">
             info@othercode.ru
           </Link>
@@ -64,7 +64,7 @@ export const Footer = () => {
       <span className={styles.footer_line}></span>
 
       <div className={styles.footer_sect}>
-        <p className={styles.footer_secondary}>Мы в социальных сетях</p>
+        <p className={styles.footer_secondary}>Мы в социальных сетях</p>
         <div className={styles.footer_social}>
           <Link>
             <img src={tg} alt="" />

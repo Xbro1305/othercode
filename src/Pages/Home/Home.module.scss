@@ -515,6 +515,7 @@
         align-items: center;
         gap: 15px;
         position: relative;
+        cursor: pointer;
 
         &_input {
           width: 30px !important;
@@ -571,6 +572,7 @@
 
       &_confirmLabel {
         display: flex;
+        cursor: pointer;
         gap: 16px;
         align-items: flex-start;
         justify-content: flex-start !important;
