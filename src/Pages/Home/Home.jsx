@@ -119,37 +119,37 @@ export const Home = () => {
             Все проекты
           </button>
         </div>
+        <div className={styles.home_projects_carousel}>
+          <Swiper
+            spaceBetween={50}
+            slidesPerView={1}
+            modules={[Pagination]}
+            pagination={{
+              clickable: true,
+              bulletClass: "swprpgntn",
+              bulletActiveClass: "swprpgntn_active",
+            }}
+            onSwiper={(swiper) => console.log(swiper)}
+          >
+            {projects.map((i, index) => (
+              <SwiperSlide
+                style={{ backgroundImage: `url(${i.bg})` }}
+                key={index}
+                className={styles.home_projects_item}
+              >
+                <h3 className={styles.home_h3}>{i.title}</h3>
+                <section className={styles.home_projects_item_tags}>
+                  {i.tags.map((t, index) => (
+                    <p className={styles.home_projects_item_tag} key={index}>
+                      #{t}
+                    </p>
+                  ))}
+                </section>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
         <div className={styles.home_projects_wrapper}>
-          <div className={styles.home_projects_carousel}>
-            <Swiper
-              spaceBetween={50}
-              slidesPerView={1}
-              modules={[Pagination]}
-              pagination={{
-                clickable: true,
-                bulletClass: "swprpgntn",
-                bulletActiveClass: "swprpgntn_active",
-              }}
-              onSwiper={(swiper) => console.log(swiper)}
-            >
-              {projects.map((i, index) => (
-                <SwiperSlide
-                  style={{ backgroundImage: `url(${i.bg})` }}
-                  key={index}
-                  className={styles.home_projects_item}
-                >
-                  <h3 className={styles.home_h3}>{i.title}</h3>
-                  <section className={styles.home_projects_item_tags}>
-                    {i.tags.map((t, index) => (
-                      <p className={styles.home_projects_item_tag} key={index}>
-                        #{t}
-                      </p>
-                    ))}
-                  </section>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
           {projects.map((i, index) => (
             <div
               style={{ backgroundImage: `url(${i.bg})` }}
