@@ -52,13 +52,18 @@ export const Home = () => {
       <div className={styles.home_directions}>
         <section className={styles.home_directions_top}>
           <h2 className={styles.home_h2}>Направления работы</h2>
-          <button className={styles.home_button}>Подробнее</button>
+          <button
+            className={styles.home_button}
+            onClick={() => navigate("/services")}
+            style={{ zIndex: "9" }}
+          >
+            Подробнее
+          </button>
         </section>
         <div className={styles.home_directions_wrapper}>
           {directions.map((i, index) => (
             <div
               key={index}
-              onClick={() => setDirect(diirect == index ? 7 : index)}
               opened={diirect == index ? "true" : "false"}
               className={styles.home_directions_item}
             >
@@ -67,7 +72,10 @@ export const Home = () => {
               <span className={styles.home_directions_item_bottomLine}></span>
               <span className={styles.home_directions_item_leftLine}></span>
 
-              <section className={styles.home_directions_item_top}>
+              <section
+                className={styles.home_directions_item_top}
+                onClick={() => setDirect(diirect == index ? 7 : index)}
+              >
                 <img
                   src={i.img}
                   className={styles.home_directions_item_img}
@@ -112,6 +120,36 @@ export const Home = () => {
           </button>
         </div>
         <div className={styles.home_projects_wrapper}>
+          <div className={styles.home_projects_carousel}>
+            <Swiper
+              spaceBetween={50}
+              slidesPerView={1}
+              modules={[Pagination]}
+              pagination={{
+                clickable: true,
+                bulletClass: "swprpgntn",
+                bulletActiveClass: "swprpgntn_active",
+              }}
+              onSwiper={(swiper) => console.log(swiper)}
+            >
+              {projects.map((i, index) => (
+                <SwiperSlide
+                  style={{ backgroundImage: `url(${i.bg})` }}
+                  key={index}
+                  className={styles.home_projects_item}
+                >
+                  <h3 className={styles.home_h3}>{i.title}</h3>
+                  <section className={styles.home_projects_item_tags}>
+                    {i.tags.map((t, index) => (
+                      <p className={styles.home_projects_item_tag} key={index}>
+                        #{t}
+                      </p>
+                    ))}
+                  </section>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
           {projects.map((i, index) => (
             <div
               style={{ backgroundImage: `url(${i.bg})` }}
@@ -128,6 +166,7 @@ export const Home = () => {
               </section>
             </div>
           ))}
+
           <button
             className={styles.home_button}
             onClick={() => navigate("/projects")}
@@ -148,7 +187,7 @@ export const Home = () => {
                   value={1}
                 />
                 <p className={styles.home_projects_form_label_text}>
-                  Веб- разработка
+                  Веб-разработка
                 </p>
               </label>
               <label className={styles.home_projects_form_label}>
@@ -159,7 +198,7 @@ export const Home = () => {
                   value={2}
                 />
                 <p className={styles.home_projects_form_label_text}>
-                  Blockchain- решения
+                  Blockchain-решения
                 </p>
               </label>
               <label className={styles.home_projects_form_label}>

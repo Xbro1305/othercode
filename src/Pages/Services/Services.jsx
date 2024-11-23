@@ -12,6 +12,7 @@ import p8 from "../../images/p8.jpg";
 
 export const Services = () => {
   const [opened, setopened] = useState(0);
+
   return (
     <div className={styles.services}>
       <div className={styles.services_top}>
@@ -39,7 +40,7 @@ export const Services = () => {
                 <span className={styles.services_item_tag}>{s.tags}</span>
                 <p className={styles.services_body}>{s.desc}</p>
               </div>
-              <div className={styles.services_item_left_bottom}>
+              <div className={styles.services_item_left_bottom} id="wrapper">
                 {JSON.stringify(
                   projects.filter((p) => p.tags.includes(s.tag))
                 ) != "[]" &&

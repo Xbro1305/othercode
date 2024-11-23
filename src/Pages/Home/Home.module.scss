@@ -434,6 +434,9 @@
         padding: 20px;
       }
     }
+    &_carousel {
+      display: none;
+    }
 
     &_wrapper {
       display: grid;
@@ -452,7 +455,6 @@
         grid-template-rows: repeat(1, 1fr);
         grid-template-columns: repeat(5, calc(100% - 15px));
         position: relative;
-
         overflow: auto;
 
         > .home_button {
@@ -684,6 +686,19 @@
           font-size: 12px;
           padding: 9px 12px;
         }
+      }
+    }
+
+    @media (max-width: 690px) {
+      &_wrapper > &_item {
+        display: none;
+      }
+      &_carousel {
+        display: flex;
+      }
+      &_carousel > &_item {
+        width: 100%;
+        max-width: 100%;
       }
     }
   }
