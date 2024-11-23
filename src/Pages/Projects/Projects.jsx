@@ -52,7 +52,7 @@ export const Projects = () => {
             <section className={styles.projects_item_tags}>
               {i.tags.map((t, index) => (
                 <p className={styles.projects_item_tag} key={index}>
-                  #{t}
+                  {t}
                 </p>
               ))}
             </section>

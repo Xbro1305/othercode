@@ -101,7 +101,7 @@
       color: #000;
       gap: 20px;
 
-      @media (max-width: 1440px) {
+      @media (max-width: 1700px) {
         display: none;
       }
     }
@@ -112,7 +112,7 @@
     color: #000;
     display: none;
 
-    @media (max-width: 1440px) {
+    @media (max-width: 17000px) {
       aspect-ratio: auto !important;
       display: flex;
       margin: 20px;
@@ -127,7 +127,7 @@
 
   &_form {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 
     &_label {
@@ -230,6 +230,10 @@
         font-weight: 300;
         line-height: 20.8px;
       }
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
     }
 
     @media (max-width: 690px) {
