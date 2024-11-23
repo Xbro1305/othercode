@@ -28,6 +28,7 @@ import prtnt3 from "../../images/image 8.svg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import vd from "../../images/видео для сайта (главная страница).mp4";
+import vdp from "../../images/home.JPG";
 
 export const Home = () => {
   const [diirect, setDirect] = useState(7);
@@ -37,7 +38,14 @@ export const Home = () => {
   return (
     <div className={styles.home}>
       <div className={styles.home_intro}>
-        <video src={vd} autoPlay muted loop className={styles.home_intro_bg}>
+        <video
+          poster={vdp}
+          src={vd}
+          autoPlay
+          muted
+          loop
+          className={styles.home_intro_bg}
+        >
           <source src={vd} type="video/mp4" />
         </video>
         <h1 className={styles.home_h1}>

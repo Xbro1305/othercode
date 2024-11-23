@@ -11,6 +11,7 @@ import i5 from "../../images/icon05.svg";
 import i6 from "../../images/icon06.svg";
 import styles from "./About.module.scss";
 import animation from "../../images/Animation.svg";
+import vdp from "../../images/about.jpg";
 import { Pagination } from "swiper/modules";
 import vd from "../../images/видео для сайта (страница _о нас_).mp4";
 
@@ -18,7 +19,7 @@ export const About = () => {
   return (
     <div className={styles.about}>
       <div className={styles.about_intro}>
-        <video src={vd} autoPlay muted loop className={styles.about_intro_bg}>
+        <video poster={vdp} src={vd} autoPlay muted loop className={styles.about_intro_bg}>
           <source src={vd} type="video/mp4" />
         </video>
         <h1 className={styles.about_h1}>Кто мы и почему мы другие?</h1>
