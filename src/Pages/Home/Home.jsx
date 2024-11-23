@@ -141,7 +141,7 @@ export const Home = () => {
                 <section className={styles.home_projects_item_tags}>
                   {i.tags.map((t, index) => (
                     <p className={styles.home_projects_item_tag} key={index}>
-                      #{t}
+                      {t}
                     </p>
                   ))}
                 </section>
@@ -160,7 +160,7 @@ export const Home = () => {
               <section className={styles.home_projects_item_tags}>
                 {i.tags.map((t, index) => (
                   <p className={styles.home_projects_item_tag} key={index}>
-                    #{t}
+                    {t}
                   </p>
                 ))}
               </section>

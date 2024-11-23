@@ -9,6 +9,8 @@ import p5 from "../../images/p5.jpg";
 import p6 from "../../images/p6.jpg";
 import p7 from "../../images/p7.jpg";
 import p8 from "../../images/p8.jpg";
+import { Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 export const Services = () => {
   const [opened, setopened] = useState(0);
@@ -41,32 +43,67 @@ export const Services = () => {
                 <p className={styles.services_body}>{s.desc}</p>
               </div>
               <div className={styles.services_item_left_bottom} id="wrapper">
-                {JSON.stringify(
-                  projects.filter((p) => p.tags.includes(s.tag))
-                ) != "[]" &&
-                  projects
+                <Swiper
+                  className="swpc"
+                  spaceBetween={0}
+                  slidesPerView={1}
+                  modules={[Pagination]}
+                  pagination={{
+                    clickable: true,
+                    bulletClass: "swprpgntn",
+                    bulletActiveClass: "swprpgntn_active",
+                  }}
+                  onSwiper={(swiper) => console.log(swiper)}
+                >
+                  {projects
                     .filter((p) => p.tags.includes(s.tag))
-                    .map((i, index) => {
-                      return (
-                        <div
-                          style={{ backgroundImage: `url(${i.bg})` }}
-                          key={index}
-                          className={styles.projects_item}
-                        >
-                          <h3 className={styles.services_h3}>{i.title}</h3>
-                          <section className={styles.projects_item_tags}>
-                            {i.tags.map((t, index) => (
-                              <p
-                                className={styles.projects_item_tag}
-                                key={index}
-                              >
-                                {t}
-                              </p>
-                            ))}
-                          </section>
-                        </div>
-                      );
-                    })}
+                    .map((i, index) => (
+                      <SwiperSlide
+                        style={{ backgroundImage: `url(${i.bg})` }}
+                        key={index}
+                        className={styles.projects_item}
+                      >
+                        <h3 className={styles.services_h3}>{i.title}</h3>
+                        <section className={styles.projects_item_tags}>
+                          {i.tags.map((t, index) => (
+                            <p className={styles.projects_item_tag} key={index}>
+                              {t}
+                            </p>
+                          ))}
+                        </section>
+                      </SwiperSlide>
+                    ))}
+                </Swiper>
+                <Swiper
+                  className="swmb"
+                  spaceBetween={0}
+                  slidesPerView={2}
+                  modules={[Pagination]}
+                  pagination={{
+                    clickable: true,
+                    bulletClass: "swprpgntn",
+                    bulletActiveClass: "swprpgntn_active",
+                  }}
+                >
+                  {projects
+                    .filter((p) => p.tags.includes(s.tag))
+                    .map((i, index) => (
+                      <SwiperSlide
+                        style={{ backgroundImage: `url(${i.bg})` }}
+                        key={index}
+                        className={styles.projects_item}
+                      >
+                        <h3 className={styles.services_h3}>{i.title}</h3>
+                        <section className={styles.projects_item_tags}>
+                          {i.tags.map((t, index) => (
+                            <p className={styles.projects_item_tag} key={index}>
+                              {t}
+                            </p>
+                          ))}
+                        </section>
+                      </SwiperSlide>
+                    ))}
+                </Swiper>
               </div>
             </div>
             <div className={styles.services_item_right}>
