@@ -58,87 +58,6 @@ export const Projects = () => {
             </section>
           </div>
         ))}
-        <div className={styles.projects_item}>
-          <h3 className={styles.projects_h3}>Обсудим ваш проект?</h3>
-          <p className={styles.projects_body}>
-            Выберите одно из направлений работы и заполните бриф пожалуйста
-          </p>
-          <form className={styles.projects_form}>
-            <label className={styles.projects_form_label}>
-              <input
-                type="radio"
-                name="a"
-                className={styles.projects_form_label_input}
-                value={1}
-              />
-              <p className={styles.projects_form_label_text}>Веб- разработка</p>
-            </label>
-            <label className={styles.projects_form_label}>
-              <input
-                type="radio"
-                name="a"
-                className={styles.projects_form_label_input}
-                value={2}
-              />
-              <p className={styles.projects_form_label_text}>
-                Blockchain- решения
-              </p>
-            </label>
-            <label className={styles.projects_form_label}>
-              <input
-                type="radio"
-                name="a"
-                className={styles.projects_form_label_input}
-                value={3}
-              />
-              <p className={styles.projects_form_label_text}>
-                Сопровождение проектов
-              </p>
-            </label>
-            <label className={styles.projects_form_label}>
-              <input
-                type="radio"
-                name="a"
-                className={styles.projects_form_label_input}
-                value={4}
-              />
-              <p className={styles.projects_form_label_text}>
-                Мобильная разработка
-              </p>
-            </label>
-            <label className={styles.projects_form_label}>
-              <input
-                type="radio"
-                name="a"
-                className={styles.projects_form_label_input}
-                value={5}
-              />
-              <p className={styles.projects_form_label_text}>
-                Продвижение и реклама
-              </p>
-            </label>
-            <label className={styles.projects_form_label}>
-              <input
-                type="radio"
-                name="a"
-                className={styles.projects_form_label_input}
-                value={6}
-              />
-              <p className={styles.projects_form_label_text}>
-                Комплексный проект
-              </p>
-            </label>
-          </form>
-          <label className={styles.projects_form_confirmLabel}>
-            <input type="checkbox" />
-            <p>
-              Отправляя форму, вы соглашаетесь с политикой обработки
-              персональных данных
-            </p>
-          </label>
-
-          <button className={styles.projects_button}>Заполнить бриф</button>
-        </div>
       </div>
       <div className={styles.projects_item}>
         <h3 className={styles.projects_h3}>Обсудим ваш проект?</h3>
@@ -280,5 +199,10 @@ const projects = [
       "Заголовок проекта. Лучше, если он будет состоять из трех, четырех, но не более   пяти строк",
     tags: ["#bloakchaine", "#web"],
     bg: p5,
+  },
+  {
+    title: "Телеграмм-бот для службы такси, включая UX-дизайн Web application",
+    tags: ["#bot", "#UX design"],
+    bg: p1,
   },
 ];
